@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artelier 3D — Configurateur</title>
+  <link rel="stylesheet" href="../../styles/artelier.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="18" cy="18" r="18" fill="#111"/>
+        <defs>
+          <linearGradient id="lg1" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#e03030"/>
+            <stop offset="100%" stop-color="#f5c518"/>
+          </linearGradient>
+        </defs>
+        <circle cx="18" cy="18" r="18" fill="url(#lg1)" opacity="0.15"/>
+        <text x="18" y="23.5" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-weight="900" font-size="18" fill="white">E</text>
+        <circle cx="18" cy="18" r="16.5" fill="none" stroke="url(#lg1)" stroke-width="1.5"/>
+      </svg>
+      <span class="logo-name">Artelier 3D</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <a href="../../pages-accueil/index.html" class="back-btn">← Accueil</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="overlay" id="overlay"></div>
+
+  <!-- MENU LATÉRAL -->
+  <aside class="side-panel" id="sidePanel">
+    <div class="panel-header">
+      <h2>Navigation</h2>
+      <button class="close-btn" id="closePanel">✕</button>
+    </div>
+    <nav class="panel-nav">
+      <a class="panel-nav-item" href="../accueil/index.html"><span class="nav-icon">🏠</span><span class="nav-label">Accueil</span></a>
+      <a class="panel-nav-item active" href="../configurateur/index.html"><span class="nav-icon">⚙️</span><span class="nav-label">Configurateur</span></a>
+      <a class="panel-nav-item" href="../blog/index.html"><span class="nav-icon">📰</span><span class="nav-label">Brèves & Actualités</span></a>
+      <a class="panel-nav-item" href="../gallery/index.html"><span class="nav-icon">🖼️</span><span class="nav-label">Nos Créations</span></a>
+      <a class="panel-nav-item" href="../social/index.html"><span class="nav-icon">🔗</span><span class="nav-label">Réseaux sociaux</span></a>
+      <a class="panel-nav-item" href="../contact/index.html"><span class="nav-icon">✉️</span><span class="nav-label">Contact</span></a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+    <div class="page-wrap fade-in">
+      <div class="page-head">
+        <div class="section-label">Configurateur</div>
+        <h1 class="page-title">Configurez votre projet</h1>
+        <p class="page-sub">Configurez votre produit en quelques clics. Choisissez le support qui correspond à votre projet.</p>
+      </div>
+      <div class="config-grid">
+        <div class="config-card"><div class="c-icon">👕</div><div class="c-label">Textile</div></div>
+        <div class="config-card"><div class="c-icon">🖼️</div><div class="c-label">Affiche</div></div>
+        <div class="config-card"><div class="c-icon">📦</div><div class="c-label">Packaging</div></div>
+        <div class="config-card"><div class="c-icon">🏷️</div><div class="c-label">Étiquette</div></div>
+        <div class="config-card"><div class="c-icon">📒</div><div class="c-label">Carnet</div></div>
+        <div class="config-card"><div class="c-icon">🎁</div><div class="c-label">Cadeau</div></div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-logo">Artelier 3D</div>
+    <div class="footer-links">
+      <a href="#">À propos</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">CGV</a>
+      <a href="../contact/index.html">Contact</a>
+    </div>
+    <div class="footer-copy">© 2026 Artelier 3D. Tous droits réservés.</div>
+  </footer>
+
+  <script src="../../animations/artelier-pages.js"></script>
+</body>
+</html>

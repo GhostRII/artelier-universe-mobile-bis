@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Figz Collectible — Process</title>
+  <link rel="stylesheet" href="../../styles/figz.css" />
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a class="nav-logo" href="../home/index.html">FIGZ <span>●</span> COLLECTIBLE</a>
+  <div class="nav-right">
+    <a class="nav-cta" href="../create/index.html">Create Your Art Toy →</a>
+    <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<aside class="side-menu" id="sideMenu" aria-hidden="true">
+  <div class="side-menu-header">Menu</div>
+  <a href="../../pages-accueil/index.html" class="side-menu-back">← Accueil</a>
+  <div class="side-menu-links">
+    <a href="../home/index.html" id="nav-home">Home</a>
+    <a href="../create/index.html" id="nav-create">Create</a>
+    <a href="../pricing/index.html" id="nav-pricing">Pricing</a>
+    <a href="../gallery/index.html" id="nav-gallery">Gallery</a>
+    <a href="../influencers/index.html" id="nav-influencers">For Influencers</a>
+    <a href="../brands/index.html" id="nav-brands">For Brands</a>
+    <a href="../process/index.html" id="nav-process" class="active">Process</a>
+  </div>
+  <a class="side-menu-cta" href="../create/index.html">Create Your Art Toy →</a>
+</aside>
+
+<!-- PAGE: PROCESS -->
+<div class="page active" id="page-process">
+  <section>
+    <div class="section-header"><div class="label">Production Process</div><h2>De l'idée à la <span class="gold-text">figurine</span></h2><p>Un processus rigoureux en 7 étapes, du concept IA à la livraison.</p></div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;">
+      <div class="process-timeline">
+        <div class="process-step"><div class="process-num">1</div><div class="process-content"><div class="process-meta"><h3>Configuration</h3><span class="process-duration">5 min</span></div><p>Tu remplis le configurateur : type de figurine, univers, accessoires et description libre.</p></div></div>
+        <div class="process-step"><div class="process-num">2</div><div class="process-content"><div class="process-meta"><h3>Génération IA</h3><span class="process-duration">2-5 min</span></div><p>L'IA génère plusieurs concepts visuels haute résolution pour ton Art Toy.</p></div></div>
+        <div class="process-step"><div class="process-num">3</div><div class="process-content"><div class="process-meta"><h3>Validation Humaine</h3><span class="process-duration">24-48h</span></div><p>Notre équipe valide et affine le concept choisi avant la mise en production.</p></div></div>
+        <div class="process-step"><div class="process-num">4</div><div class="process-content"><div class="process-meta"><h3>Modélisation 3D</h3><span class="process-duration">3-5 jours</span></div><p>Nos modélisateurs 3D traduisent le concept en modèle physique détaillé.</p></div></div>
+        <div class="process-step"><div class="process-num">5</div><div class="process-content"><div class="process-meta"><h3>Impression & Production</h3><span class="process-duration">1-4 semaines</span></div><p>Impression 3D haute résolution, moulage, peinture et finitions.</p></div></div>
+        <div class="process-step"><div class="process-num">6</div><div class="process-content"><div class="process-meta"><h3>Contrôle Qualité</h3><span class="process-duration">1-2 jours</span></div><p>Chaque figurine est inspectée individuellement. Zéro défaut toléré.</p></div></div>
+        <div class="process-step"><div class="process-num">7</div><div class="process-content"><div class="process-meta"><h3>Expédition</h3><span class="process-duration">2-5 jours</span></div><p>Emballage premium et expédition sécurisée avec suivi en temps réel.</p></div></div>
+      </div>
+      <div>
+        <div style="background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; margin-bottom: 24px;">
+          <div class="label" style="margin-bottom: 16px;">Statuts de commande</div>
+          <div class="status-chips">
+            <span class="status-chip s1">📋 New Order</span>
+            <span class="status-chip s2">⏳ Waiting Validation</span>
+            <span class="status-chip s3">🎨 3D Modeling</span>
+            <span class="status-chip s4">🖨️ Printing</span>
+            <span class="status-chip s5">🔍 QC</span>
+            <span class="status-chip s6">📦 Shipped</span>
+            <span class="status-chip s7">✅ Completed</span>
+          </div>
+        </div>
+        <div style="background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px;">
+          <div class="label" style="margin-bottom: 16px;">Phase 2 — Roadmap</div>
+          <h3 style="margin-bottom: 12px;">Image → Modèle 3D</h3>
+          <p style="font-size: 14px; line-height: 1.7;">Prochainement : conversion semi-automatique d'une image en modèle 3D.</p>
+          <div style="margin-top: 16px; padding: 12px 16px; background: var(--gold-dim); border: 1px solid rgba(201,168,76,0.2); border-radius: 8px;"><span style="font-size: 12px; color: var(--gold); font-weight: 700;">🚀 Coming Soon — Phase 2</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer><div class="footer-logo">FIGZ <span>●</span> COLLECTIBLE</div><p>© 2025 Figz Collectible AI Platform</p><p style="color: var(--text3); font-size: 12px;">Powered by AI · Crafted by Hand</p></footer>
+</div>
+
+<script src="../../animations/figz-pages.js"></script>
+</body>
+</html>

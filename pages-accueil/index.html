@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bienvenue — Choisissez votre boutique</title>
+  <link rel="stylesheet" href="../styles/accueil.css" />
+</head>
+<body>
+
+  <div class="bg-glow"></div>
+
+  <!-- TITRE -->
+  <div class="accueil-header">
+    <div class="label">Artelier Universe</div>
+    <h1>Choisissez votre <span>boutique</span></h1>
+  </div>
+
+  <!-- PORTES -->
+  <div class="doors-scene">
+
+    <!-- PORTE 1 : ARTELIER 3D -->
+    <div class="door-card door-card-1"
+         data-href="../pages-artelier/index.html"
+         data-variant="artelier">
+      <div class="door-scene-wrap">
+        <div style="position:relative;">
+          <div class="door-ambient"></div>
+          <div class="door-particle" style="left:40%; bottom:20%; animation-duration:3.2s; animation-delay:0s;"></div>
+          <div class="door-particle" style="left:55%; bottom:30%; animation-duration:2.8s; animation-delay:0.7s;"></div>
+          <div class="door-particle" style="left:48%; bottom:15%; animation-duration:3.5s; animation-delay:1.4s;"></div>
+          <div class="door-frame">
+            <div class="door-panel">
+              <div class="door-sign-plate">Artelier 3D</div>
+              <div class="door-window"></div>
+              <div class="door-panels-bottom">
+                <div class="door-rect"></div>
+                <div class="door-rect"></div>
+              </div>
+              <div class="door-handle"></div>
+            </div>
+          </div>
+        </div>
+        <div class="door-step"></div>
+      </div>
+      <div class="door-label">
+        <div class="door-name">Artelier 3D</div>
+        <div class="door-sub">Studio d'impression créative</div>
+      </div>
+    </div>
+
+    <!-- PORTE 2 : FIGZ COLLECTIBLE -->
+    <div class="door-card door-card-2"
+         data-href="../pages-figz/index.html"
+         data-variant="figz">
+      <div class="door-scene-wrap">
+        <div style="position:relative;">
+          <div class="door-ambient"></div>
+          <div class="door-particle" style="left:42%; bottom:22%; animation-duration:3.0s; animation-delay:0.3s;"></div>
+          <div class="door-particle" style="left:57%; bottom:28%; animation-duration:2.6s; animation-delay:1.0s;"></div>
+          <div class="door-particle" style="left:50%; bottom:18%; animation-duration:3.8s; animation-delay:1.6s;"></div>
+          <div class="door-frame">
+            <div class="door-panel">
+              <div class="door-sign-plate">Figz ● Collectible</div>
+              <div class="door-window"></div>
+              <div class="door-panels-bottom">
+                <div class="door-rect"></div>
+                <div class="door-rect"></div>
+              </div>
+              <div class="door-handle"></div>
+            </div>
+          </div>
+        </div>
+        <div class="door-step"></div>
+      </div>
+      <div class="door-label">
+        <div class="door-name">Figz Collectible</div>
+        <div class="door-sub">AI Art Toy Platform</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- HINT -->
+  <div class="accueil-hint">Cliquez sur une porte pour entrer</div>
+
+  <script src="../animations/accueil.js"></script>
+</body>
+</html>

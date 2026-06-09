@@ -1,0 +1,228 @@
+/* ══════════════════════════════════════
+   accueil.css — Page d'accueil multi-portes
+   Artelier 3D · test 7
+   ══════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #08060a;
+  color: #fafafa;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── FOND AMBIANT ── */
+.bg-glow {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 50% 60% at 30% 50%, rgba(224,48,48,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 70% 50%, rgba(201,168,76,0.07) 0%, transparent 70%);
+}
+
+/* ── TITRE ── */
+.accueil-header {
+  position: relative; z-index: 1;
+  text-align: center;
+  margin-bottom: 56px;
+}
+.accueil-header .label {
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: #666; margin-bottom: 14px;
+}
+.accueil-header h1 {
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  font-weight: 900; letter-spacing: -0.02em;
+  color: #fafafa;
+}
+.accueil-header h1 span {
+  background: linear-gradient(90deg, #e03030, #f5c518);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── SCÈNE DES PORTES ── */
+.doors-scene {
+  position: relative; z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 64px;
+}
+
+/* ── CARTE PORTE ── */
+.door-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.door-card:hover .door-label { opacity: 1; transform: translateY(0); }
+.door-card:hover .door-frame { box-shadow: inset 0 0 30px rgba(0,0,0,0.8), 0 0 80px var(--door-glow); }
+
+/* ── LUEUR PAR PORTE ── */
+.door-card-1 { --door-color: #e03030; --door-glow: rgba(224,48,48,0.2); }
+.door-card-2 { --door-color: #C9A84C; --door-glow: rgba(201,168,76,0.2); }
+
+.door-ambient {
+  position: absolute;
+  width: 260px; height: 400px;
+  border-radius: 8px;
+  animation: pulseGlow 3s ease-in-out infinite;
+  pointer-events: none;
+}
+.door-card-1 .door-ambient { background: radial-gradient(ellipse at center, rgba(224,48,48,0.12) 0%, transparent 70%); }
+.door-card-2 .door-ambient { background: radial-gradient(ellipse at center, rgba(201,168,76,0.12) 0%, transparent 70%); animation-delay: 1.2s; }
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.04); }
+}
+
+/* ── CADRE ── */
+.door-frame {
+  width: 200px; height: 320px;
+  background: #1a1208;
+  border: 8px solid #2e200a;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  position: relative;
+  display: flex; align-items: stretch;
+  transition: box-shadow 0.4s;
+}
+.door-card-2 .door-frame { background: #141010; border-color: #2a1a08; }
+
+/* ── PANNEAU ── */
+.door-panel {
+  width: 100%; height: 100%;
+  border-radius: 2px;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: space-between;
+  padding: 14px 12px;
+}
+.door-card-1 .door-panel { background: linear-gradient(160deg, #3d2808 0%, #2a1c06 40%, #1e1305 100%); box-shadow: inset -4px 0 12px rgba(0,0,0,0.5); }
+.door-card-2 .door-panel { background: linear-gradient(160deg, #2a1f0a 0%, #1a1406 40%, #120e04 100%); box-shadow: inset -4px 0 12px rgba(0,0,0,0.5); }
+.door-panel.open { transform: rotateY(-72deg); }
+
+/* ── VITRE ── */
+.door-window {
+  width: 120px; height: 100px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.03); backdrop-filter: blur(2px);
+  position: relative;
+}
+.door-card-1 .door-window { border: 4px solid #4a3010; box-shadow: inset 0 0 20px rgba(245,197,24,0.08); }
+.door-card-2 .door-window { border: 4px solid #5a4010; box-shadow: inset 0 0 20px rgba(201,168,76,0.1); }
+.door-window::before, .door-window::after { content: ''; position: absolute; }
+.door-window::before { width: 3px; height: 100%; left: 50%; top: 0; transform: translateX(-50%); }
+.door-window::after  { width: 100%; height: 3px; top: 50%; left: 0; transform: translateY(-50%); }
+.door-card-1 .door-window::before,
+.door-card-1 .door-window::after { background: #4a3010; }
+.door-card-2 .door-window::before,
+.door-card-2 .door-window::after { background: #5a4010; }
+
+/* ── PANNEAUX BAS ── */
+.door-panels-bottom { display: flex; gap: 8px; width: 100%; }
+.door-rect { flex: 1; height: 60px; border-radius: 3px; }
+.door-card-1 .door-rect { border: 2px solid #4a3010; }
+.door-card-2 .door-rect { border: 2px solid #5a4010; }
+
+/* ── POIGNÉE ── */
+.door-handle {
+  position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+  width: 8px; height: 32px; border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+.door-handle::after {
+  content: ''; position: absolute; right: -5px; top: 50%; transform: translateY(-50%);
+  width: 14px; height: 14px; border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+.door-card-1 .door-handle { background: linear-gradient(180deg, #c8a040, #8a6820); }
+.door-card-1 .door-handle::after { background: linear-gradient(135deg, #d4aa50, #7a5c18); }
+.door-card-2 .door-handle { background: linear-gradient(180deg, #C9A84C, #8a6820); }
+.door-card-2 .door-handle::after { background: linear-gradient(135deg, #E8C96A, #9a7428); }
+
+/* ── ENSEIGNE ── */
+.door-sign-plate {
+  border-radius: 3px; padding: 5px 8px; text-align: center;
+  font-size: 0.58rem; font-weight: 900; letter-spacing: 0.1em;
+  text-transform: uppercase; box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+.door-card-1 .door-sign-plate {
+  width: 110px;
+  background: linear-gradient(135deg, #c8a040, #8a6820); color: #1a1208;
+}
+.door-card-2 .door-sign-plate {
+  width: 110px;
+  background: linear-gradient(135deg, #C9A84C, #6a4c10); color: #08060a;
+}
+
+/* ── SEUIL ── */
+.door-step {
+  width: 240px; height: 14px;
+  background: linear-gradient(180deg, #2e200a, #1a1208);
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+.door-card-2 .door-step { background: linear-gradient(180deg, #2a1a08, #180e06); }
+
+/* ── PARTICULES ── */
+.door-particle {
+  position: absolute; width: 2px; height: 2px; border-radius: 50%;
+  animation: floatUp linear infinite; pointer-events: none;
+}
+.door-card-1 .door-particle { background: rgba(245,197,24,0.5); }
+.door-card-2 .door-particle { background: rgba(201,168,76,0.6); }
+@keyframes floatUp {
+  0%   { transform: translateY(0) scale(1); opacity: 0.7; }
+  100% { transform: translateY(-100px) scale(0); opacity: 0; }
+}
+
+/* ── LABEL PORTE ── */
+.door-label {
+  margin-top: 20px;
+  text-align: center;
+  opacity: 0.7;
+  transform: translateY(4px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.door-label .door-name {
+  font-size: 0.85rem; font-weight: 800; letter-spacing: 0.06em;
+  text-transform: uppercase; color: #fafafa;
+  margin-bottom: 4px;
+}
+.door-label .door-sub {
+  font-size: 0.68rem; color: #555; letter-spacing: 0.1em;
+}
+
+/* ── HINT ── */
+.accueil-hint {
+  position: relative; z-index: 1;
+  margin-top: 52px; font-size: 0.75rem;
+  color: rgba(255,255,255,0.25); letter-spacing: 0.18em; text-transform: uppercase;
+  animation: blink 2.4s ease-in-out infinite;
+}
+@keyframes blink { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.8; } }
+
+/* ── PERSPECTIVE SCÈNE ── */
+.door-scene-wrap {
+  perspective: 1000px;
+  display: flex; flex-direction: column; align-items: center;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  .doors-scene { flex-direction: column; gap: 40px; align-items: center; }
+  .accueil-header { margin-bottom: 36px; }
+}
