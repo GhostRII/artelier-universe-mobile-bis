@@ -27,7 +27,27 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') toggleMenu(false);
   });
   renderGallery();
+  initContactToggle();
 });
+
+/* ── TOGGLE CONTACT (page Contact) ── */
+function initContactToggle() {
+  const partBtn = document.getElementById('panelPartBtn');
+  const proBtn  = document.getElementById('panelProBtn');
+  if (!partBtn || !proBtn) return;
+  partBtn.addEventListener('click', function () {
+    this.classList.add('active');
+    proBtn.classList.remove('active');
+    document.getElementById('panelFormPart').classList.add('active');
+    document.getElementById('panelFormPro').classList.remove('active');
+  });
+  proBtn.addEventListener('click', function () {
+    this.classList.add('active');
+    partBtn.classList.remove('active');
+    document.getElementById('panelFormPro').classList.add('active');
+    document.getElementById('panelFormPart').classList.remove('active');
+  });
+}
 
 /* ── CONFIGURATOR (page Create) ── */
 const selections = { type: null, universe: null, accessories: [] };
